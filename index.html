@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tasaar</title>
+  <title>Tasaar Clone</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -15,23 +15,61 @@
     body {
       color: #1a1a1a;
       background: #fff;
+      padding-top: 80px;
     }
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #fff;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       border-bottom: 1px solid #eee;
     }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo img {
+      height: 50px;
+    }
     nav ul {
       display: flex;
       list-style: none;
       gap: 1.5rem;
     }
+    nav li {
+      position: relative;
+    }
     nav a {
       text-decoration: none;
       color: #1a1a1a;
       font-weight: 500;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      min-width: 150px;
+      z-index: 1001;
+    }
+    .dropdown li {
+      padding: 0.5rem 1rem;
+    }
+    .dropdown li:hover {
+      background: #f1f1f1;
+    }
+    nav li:hover .dropdown {
+      display: block;
     }
     .hero {
       text-align: center;
@@ -94,12 +132,34 @@
 </head>
 <body>
   <header>
-    <h2>Tasaar</h2>
+    <div class="logo">
+      <img src="tasaar_logo.png" alt="Logo">
+      <h2>Tasaar</h2>
+    </div>
     <nav>
       <ul>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Community</a></li>
+        <li>
+          <a href="#">Products</a>
+          <ul class="dropdown">
+            <li><a href="#">Tasaar Framework</a></li>
+            <li><a href="#">ERPNext</a></li>
+            <li><a href="#">Tasaar Cloud</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Services</a>
+          <ul class="dropdown">
+            <li><a href="#">Consulting</a></li>
+            <li><a href="#">Hosting</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Community</a>
+          <ul class="dropdown">
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </li>
         <li><a href="#">Blog</a></li>
         <li><a href="#">About</a></li>
       </ul>
@@ -171,7 +231,7 @@
   </section>
 
   <footer>
-    &copy; 2025 Tasaar Pvt. Ltd. | Made with ❤️ in India
+    &copy; 2025 Tasaar Pvt. Ltd. | Made with ❤️
   </footer>
 </body>
 </html>
