@@ -1,0 +1,139 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      color: #1a1a1a;
+      background: #fff;
+      padding-top: 80px;
+    }
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo img {
+      height: 60px;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+    nav li {
+      position: relative;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      min-width: 150px;
+      z-index: 1001;
+    }
+    .dropdown li {
+      padding: 0.5rem 1rem;
+    }
+    .dropdown li:hover {
+      background: #f1f1f1;
+    }
+    nav li:hover .dropdown {
+      display: block;
+    }
+    .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-top: 0; /* remove any spacing from fixed header compensation */
+}
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    .hero p {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #666;
+    }
+    .hero .btn {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .section {
+
+      text-align: center;
+    }
+    .products, .blogs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card, .blog {
+      border: 1px solid #ddd;
+      padding: 1.5rem;
+      border-radius: 10px;
+      width: 300px;
+      transition: box-shadow 0.2s;
+      background-color: #fff;
+    }
+    a:visited, a:link {
+      text-decoration: none;
+      color: black;
+    }
+    .card:hover, .blog:hover {
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .hand-drawn-img {
+      max-width: 200px;
+      margin: 1rem auto;
+      display: block;
+    }
+    footer {
+      padding: 2rem;
+      background: #f8f9fa;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+     .inline-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
