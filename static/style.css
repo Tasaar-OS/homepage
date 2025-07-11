@@ -46,22 +46,64 @@
     .dropdown {
       display: none;
       position: absolute;
-      top: 100%;
+      top: 110%;
       left: 0;
       background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      min-width: 150px;
+      border: none;
+      border-radius: 12px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(60, 72, 88, 0.15), 0 1.5px 4px rgba(60, 72, 88, 0.08);
       z-index: 1001;
+      padding: 0.5rem 0;
+      transition: opacity 0.2s, transform 0.2s;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+    }
+    nav li:hover .dropdown,
+    nav li:focus-within .dropdown {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
     }
     .dropdown li {
-      padding: 0.5rem 1rem;
+      padding: 0;
     }
-    .dropdown li:hover {
-      background: #f1f1f1;
-    }
-    nav li:hover .dropdown {
+    .dropdown a {
       display: block;
+      padding: 0.75rem 1.25rem;
+      color: #222;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown a:hover,
+    .dropdown a:focus {
+      background: #f3f6fa;
+      color: #2563eb;
+      font-weight: 600;
+    }
+    nav li {
+      position: relative;
+      transition: color 0.2s;
+    }
+    nav > ul > li > a::after {
+      content: ' ▼';
+      font-size: 0.7em;
+      color: #888;
+      margin-left: 0.2em;
+      vertical-align: middle;
+      opacity: 0.7;
+      transition: transform 0.2s;
+      display: inline-block;
+    }
+    nav > ul > li:hover > a::after,
+    nav > ul > li:focus-within > a::after {
+      transform: rotate(-180deg);
+    }
+    nav > ul > li:not(:has(.dropdown)) > a::after {
+      content: '';
     }
     .hero {
   display: flex;
@@ -71,7 +113,7 @@
   height: 100vh;
   padding: 2rem;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: white;
   margin-top: 0; /* remove any spacing from fixed header compensation */
 }
 
@@ -137,3 +179,12 @@
             align-items: center;
             gap: 10px;
         }
+        .product-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
