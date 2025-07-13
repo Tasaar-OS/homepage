@@ -137,8 +137,8 @@
       cursor: pointer;
     }
     .section {
-
       text-align: center;
+      padding: 4rem 0 4rem 0; /* Add top and bottom padding */
     }
     .products, .blogs {
       display: flex;
@@ -146,6 +146,7 @@
       justify-content: center;
       gap: 2rem;
       margin-top: 2rem;
+      padding: 1rem 0 2rem 0; /* Add vertical padding inside the container */
     }
     .card, .blog {
       border: 1px solid #ddd;
@@ -208,4 +209,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+.hero-main-title {
+  text-align: left;
+  /* margin-bottom: 1rem; */
+  color: #b01030;
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
