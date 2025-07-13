@@ -37,74 +37,76 @@
     }
     nav li {
       position: relative;
+      transition: color 0.2s;
     }
     nav a {
       text-decoration: none;
       color: #1a1a1a;
       font-weight: 500;
     }
-    .dropdown {
-      display: none;
-      position: absolute;
-      top: 110%;
-      left: 0;
-      background: #fff;
-      border: none;
-      border-radius: 12px;
-      min-width: 180px;
-      box-shadow: 0 8px 24px rgba(60, 72, 88, 0.15), 0 1.5px 4px rgba(60, 72, 88, 0.08);
-      z-index: 1001;
-      padding: 0.5rem 0;
-      transition: opacity 0.2s, transform 0.2s;
-      opacity: 0;
-      pointer-events: none;
-      transform: translateY(10px);
-    }
-    nav li:hover .dropdown,
-    nav li:focus-within .dropdown {
-      display: block;
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(0);
-    }
-    .dropdown li {
-      padding: 0;
-    }
-    .dropdown a {
-      display: block;
-      padding: 0.75rem 1.25rem;
-      color: #222;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: background 0.15s, color 0.15s;
-    }
-    .dropdown a:hover,
-    .dropdown a:focus {
-      background: #f3f6fa;
-      color: #2563eb;
-      font-weight: 600;
-    }
-    nav li {
-      position: relative;
-      transition: color 0.2s;
-    }
-    nav > ul > li > a::after {
-      content: ' ▼';
-      font-size: 0.7em;
-      color: #888;
-      margin-left: 0.2em;
-      vertical-align: middle;
-      opacity: 0.7;
-      transition: transform 0.2s;
-      display: inline-block;
-    }
-    nav > ul > li:hover > a::after,
-    nav > ul > li:focus-within > a::after {
-      transform: rotate(-180deg);
-    }
-    nav > ul > li:not(:has(.dropdown)) > a::after {
-      content: '';
-    }
+   .dropdown {
+  display: block; /* Always block so JS can control visibility via opacity + pointer-events */
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #fff;
+  border: none;
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 8px 24px rgba(60, 72, 88, 0.15), 0 1.5px 4px rgba(60, 72, 88, 0.08);
+  z-index: 1001;
+  padding: 0.5rem 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+}
+
+nav li.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdown li {
+  padding: 0;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: #222;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.dropdown a:hover,
+.dropdown a:focus {
+  background: #f3f6fa;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+nav > ul > li > a::after {
+  content: ' ▼';
+  font-size: 0.7em;
+  color: #888;
+  margin-left: 0.2em;
+  vertical-align: middle;
+  opacity: 0.7;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+
+nav > ul > li.active > a::after {
+  transform: rotate(-180deg);
+}
+
+nav > ul > li:not(:has(.dropdown)) > a::after {
+  content: '';
+}
+
     .hero {
   display: flex;
   flex-direction: column;

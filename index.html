@@ -173,5 +173,51 @@
     document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
   });
   </script>
+ <script>
+  function closeAllDropdowns(exceptLi = null) {
+    document.querySelectorAll('nav li.active').forEach(li => {
+      if (li !== exceptLi) li.classList.remove('active');
+    });
+  }
+
+  document.querySelectorAll('nav li').forEach(li => {
+    const dropdown = li.querySelector('.dropdown');
+
+    if (dropdown) {
+      // Hover open
+      li.addEventListener('mouseenter', () => {
+        closeAllDropdowns(li);
+        li.classList.add('active');
+      });
+
+      // Leave close
+      li.addEventListener('mouseleave', () => {
+        li.classList.remove('active');
+      });
+    }
+  });
+
+  document.querySelectorAll('nav li > a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const li = link.parentElement;
+      const dropdown = li.querySelector('.dropdown');
+
+      if (dropdown) {
+        e.preventDefault(); // Prevent link navigation
+        const wasActive = li.classList.contains('active');
+        closeAllDropdowns();
+        if (!wasActive) li.classList.add('active');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) {
+      closeAllDropdowns();
+    }
+  });
+</script>
+
+
 </body>
 </html>
