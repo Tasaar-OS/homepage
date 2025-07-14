@@ -29,6 +29,7 @@
     }
     .logo img {
       height: 60px;
+      padding-right: 0.5rem;
     }
     nav ul {
       display: flex;
