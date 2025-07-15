@@ -1,2 +1,0 @@
-# homepage
-Official Tasaar homepage

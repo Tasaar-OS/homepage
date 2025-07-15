@@ -1,5 +1,0 @@
-1. We changed nameserver of Godaddy defaults to netlify nameservers (4 of them provided by netlify)
-- This means we are using netlify nameservers in our godaddy domain
-- Netlify will handle servers, deployments, and SSL/TTL certificates (free)
-
-2. Custom domain in netlify --> write domain -- > click use netlify dns --> copy nameservers given by netlify --> change default godaddy nameservers to that given by netlify
