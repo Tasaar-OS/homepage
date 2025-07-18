@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-content">
+      <h2 class="hero-main-title">Deserve the best</h2>
+      <!-- <h2 style="text-align: left; margin-bottom: 0.5rem;">Built to remember</h2>
+      <h2 style="text-align: left; margin-bottom: 0.5rem;">Becoming</h2> -->
+      <p style="text-align: left;">Building enduring platforms for those who lead, create, and striving for...</p>
+      <h1 style="text-align: left; margin-bottom: 1rem;">SOMETHING MORE</h1>
+
+      <a href="#products" class="btn">Explore Products</a>
+    </div>
+  </section>
+
+  <section id="products" class="section">
+    <h2>Products</h2>
+    <div class="products">
+      <a target="_blank" href="tasaar_veda.html" style="text-decoration: none;">
+        <div class="card">
+          <img class="product-logo" src="static/veda_logo.png" alt="Veda Logo" />
+          <h3>Veda</h3>
+          <p>Open Source ERP with everything your business needs.</p>
+        </div>
+      </a>
+      <div class="card">
+        <img class="product-logo" src="static/civicsight_logo.png" alt="CivicSight Logo" />
+        <h3>CivicSight</h3>
+        <p>Smart solutions for civic and urban management.</p>
+      </div>
+      <div class="card">
+        <img class="product-logo" src="static/maya_logo.png" alt="Maya Logo" />
+        <h3>Maya</h3>
+        <p>AI-powered analytics platform for Youtube, Instagram, SEO Analysis.</p>
+      </div>
+      <!-- <div class="card">
+        <img class="product-logo" src="static/frappe_logo.png" alt="CRM/ERP by Frappe Logo" />
+        <h3>CRM/ERP by Frappe</h3>
+        <p>Comprehensive CRM and ERP suite by Frappe.</p>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- <section class="section">
+    <h2>Illustrations</h2>
+    <div class="products">
+      <div class="card">
+        <h3>SatCom</h3>
+        <img class="hand-drawn-img" src="https://upload.wikimedia.org/wikipedia/commons/4/42/Satellite-sketch.svg" alt="SatCom Sketch">
+      </div>
+      <div class="card">
+        <h3>CRM</h3>
+        <img class="hand-drawn-img" src="https://upload.wikimedia.org/wikipedia/commons/d/d6/CRM-sketch-style.svg" alt="CRM Sketch">
+      </div>
+      <div class="card">
+        <h3>AI</h3>
+        <img class="hand-drawn-img" src="https://upload.wikimedia.org/wikipedia/commons/f/f0/AI_brain_hand_drawn_style.svg" alt="AI Sketch">
+      </div>
+      <div class="card">
+        <h3>Energy</h3>
+        <img class="hand-drawn-img" src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Energy-sketch-style.svg" alt="Energy Sketch">
+      </div>
+    </div>
+  </section> -->
+
+  <section class="section">
+    <h2>Latest Blog Posts</h2>
+    <div class="blogs">
+      <div class="blog">
+        <h4>Why Open Source is the Future of ERP</h4>
+        <p>Explore how community-led development is transforming enterprise tools.</p>
+      </div>
+      <div class="blog">
+        <h4>Building Scalable Apps with Tasaar Framework</h4>
+        <p>Our guide to building powerful tools with minimal code.</p>
+      </div>
+      <div class="blog">
+        <h4>Integrating AI in Business Workflows</h4>
+        <p>Real-world use cases of artificial intelligence in enterprise solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  {% endblock %}
